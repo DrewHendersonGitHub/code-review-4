@@ -4,7 +4,7 @@ function Pizza(topping, size) {
 }
 
 
-let newPizza = new Pizza("Cheese", "large");
+let newPizza = new Pizza(['Cheese', 'Pepperoni'], 'large');
 console.log(newPizza);
 
 
