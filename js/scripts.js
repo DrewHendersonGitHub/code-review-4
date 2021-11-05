@@ -13,8 +13,9 @@ console.log(newPizza);
 
 
 $(document).ready(function() {
-  $("#mainForm").submit(function(event) {
+  $("#pizzaForm").submit(function(event) {
     event.preventDefault();
-
+    newPizza.toppings.push($("input#topping").val())
+    console.log(newPizza);
   });
 });
