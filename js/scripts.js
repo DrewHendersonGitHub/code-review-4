@@ -1,21 +1,27 @@
-function Pizza(topping, size) {
-  this.toppings = topping;
-  this.size = size;
+function Pizza() {
+  this.toppings = [];
+  this.size = 0;
 }
 
 Pizza.prototype.calcCost = function() {
-  return this.toppings.length * 3;
+  console.log(this.size);
+  return (this.toppings.length * this.size * 0.25 + this.size + 5);
 };
 
-let newPizza = new Pizza(['Cheese', 'Pepperoni'], 'large');
-console.log(newPizza.calcCost());
+let newPizza = new Pizza();
 console.log(newPizza);
 
 
 $(document).ready(function() {
-  $("#pizzaForm").submit(function(event) {
+  $("#toppingForm").submit(function(event) {
     event.preventDefault();
     newPizza.toppings.push($("input#topping").val())
+    console.log(newPizza);
+  });
+  $("#pizzaForm").submit(function(event) {
+    event.preventDefault();
+    newPizza.size = parseInt($("#size").val());
+    $("#showOrder").html("Your pizza is " + (newPizza.calcCost()) + "$");
     console.log(newPizza);
   });
 });
