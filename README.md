@@ -10,7 +10,7 @@ Test: It should return a Pizza object with two properties for the toppings and s
 
 Code: const newPizza("Cheese", "large");
 
-Expected Output: Pizza {topping: 'Cheese'}
+Expected Output: Pizza {topping: 'Cheese', size: 'large'}
 \
 \
 \

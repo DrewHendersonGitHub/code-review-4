@@ -1,9 +1,10 @@
-function Pizza(topping) {
+function Pizza(topping, size) {
   this.topping = topping;
+  this.size = size;
 }
 
 
-let newPizza = new Pizza("Cheese")
+let newPizza = new Pizza("Cheese", "large");
 console.log(newPizza);
 
 
