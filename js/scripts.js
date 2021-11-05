@@ -1,11 +1,20 @@
 function Pizza() {
   this.toppings = [];
-  this.size = 0;
+  this.size = '';
 }
 
 Pizza.prototype.calcCost = function() {
-  console.log(this.size);
-  return (this.toppings.length * this.size * 0.25 + this.size + 5);
+  let size = 0;
+  if (this.size === 'Small') {
+    size = 1;
+  }
+  if (this.size === 'Medium') {
+    size = 2;
+  }
+  if (this.size === 'Large') {
+    size = 3;
+  }
+  return (this.toppings.length * size * 0.25 + size + 5);
 };
 
 let newPizza = new Pizza();
@@ -20,8 +29,24 @@ $(document).ready(function() {
   });
   $("#pizzaForm").submit(function(event) {
     event.preventDefault();
-    newPizza.size = parseInt($("#size").val());
-    $("#showOrder").html("Your pizza is " + (newPizza.calcCost()) + "$");
+    newPizza.size = ($("#size").val());
+    $("#showOrder").html("Purchase a " + newPizza.size + " pizza with ");
+    if (newPizza.toppings.length === 0) {
+      $("#showOrder").append("no toppings ");
+    }
+    else if (newPizza.toppings.length === 1) {
+      $("#showOrder").append(newPizza.toppings[0] + " ");
+    }
+    else {
+      for (let i = 0; i < newPizza.toppings.length; i++){
+        if (newPizza.toppings.length === i + 1) {
+          $("#showOrder").append("and " + newPizza.toppings[i] + " ");
+        } else {
+          $("#showOrder").append(newPizza.toppings[i] + ", ");
+        }
+      }
+    }
+    $("#showOrder").append("for " + newPizza.calcCost() + "$?");
     console.log(newPizza);
   });
 });
