@@ -22,11 +22,15 @@ Expected Output: Pizza {topping: ['Cheese', 'Pepperoni'], size: 'large'}
 \
 \
 \
-Test: 
+Describe: calcCost()
+\
+\
+\
+Test: It should return the cost based off of the toppings and size
 
-Code: 
+Code: Pizza.prototype.calcCost
 
-Expected Output: 
+Expected Output: 6
 \
 \
 \
