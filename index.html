@@ -12,25 +12,36 @@
 </head>
 <body>
   <div class="container c1">
-    <h1>its Pizza time</h1>
-    <form id="toppingForm">
-      <div class="form-group">
-        <label for="topping">Enter a Topping:</label>
-        <input id="topping" class="form-control" type="text" placeholder="new topping">
+    <h1>The Pizza Store</h1>
+    <div class="row">
+      <div class="col-6">
+        <form id="toppingForm">
+          <div class="form-group">
+            <label for="topping">Enter a Topping:</label>
+            <input id="topping" class="form-control" type="text" placeholder="new topping">
+          </div>
+          <button type="submit" class="btn1" id="add">Add Topping</button>
+          <button type="submit" class="btn1" id="remove">Remove All Toppings</button>
+        </form>
       </div>
-      <button type="submit" class="btn" id="add">Add Topping</button>
-      <button type="submit" class="btn" id="remove">Remove All Toppings</button>
-    </form>
+      <div class="col-6">
+        
+      </div>
+    </div>
+    <hr>
     <form id="pizzaForm">
+      <div class="row">
+        <div class="col-6">
+          <label for="size">Select a size:</label>
+          <select class="form-control" id="size">
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+          </select>
+          <button type="submit" class="btn">Make Pizza</button>
+        </div>
+      </div>
       <hr>
-      <label for="size">Select a size:</label>
-      <select class="form-control" id="size">
-        <option>Small</option>
-        <option>Medium</option>
-        <option>Large</option>
-      </select>
-      <hr>
-      <button type="submit" class="btn">Make Pizza</button>
     </form>
   </div>
   <div class="container c2">

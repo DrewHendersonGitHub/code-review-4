@@ -42,10 +42,10 @@ let newPizza = new Pizza();
 $(document).ready(function() {
   $("#toppingForm").submit(function(event) {
     event.preventDefault();
+    newPizza.toppings.push($("input#topping").val())
     $("#remove").on("click", function() {
       newPizza.toppings = [];
     })
-    newPizza.toppings.push($("input#topping").val())
     console.log(newPizza);
   });
   $("#pizzaForm").submit(function(event) {
