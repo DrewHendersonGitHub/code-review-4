@@ -8,10 +8,10 @@ Pizza.prototype.calcCost = function() {
   if (this.size === 'Small') {
     size = 1;
   }
-  if (this.size === 'Medium') {
+  else if (this.size === 'Medium') {
     size = 2;
   }
-  if (this.size === 'Large') {
+  else {
     size = 3;
   }
   return (this.toppings.length * size * 0.25 + size + 5);
@@ -46,12 +46,10 @@ $(document).ready(function() {
     $("#remove").on("click", function() {
       newPizza.toppings = [];
     })
-    console.log(newPizza);
   });
   $("#pizzaForm").submit(function(event) {
     event.preventDefault();
     newPizza.size = ($("#size").val());
     newPizza.listToppings();
-    console.log(newPizza);
   });
 });
